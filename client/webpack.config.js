@@ -18,12 +18,41 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+      }),
+      new InjectManifest({
+        swSrc: './src/src-sw.js',
+      }),
+      new WebpackPwaManifest({
+        name: 'My App',
+        short_name: 'My App',
+        description: 'This is my app',
+        background_color: '#ffffff',
+        crossorigin: 'use-credentials',
+        icons: [{
+          src: path.resolve(__dirname,'src/img/icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+        }]
+      }),
     ],
 
     module: {
       rules: [
-       
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            }
+          },
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
       ],
     },
   };
