@@ -22,7 +22,7 @@ module.exports = () => {
         template: './src/index.html',
       }),
       new InjectManifest({
-        swSrc: './src/src-sw.js',
+        swSrc: './src-sw.js',
       }),
       new WebpackPwaManifest({
         name: 'The Text Editor App',
