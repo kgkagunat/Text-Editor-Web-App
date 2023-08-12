@@ -25,9 +25,9 @@ module.exports = () => {
         swSrc: './src/src-sw.js',
       }),
       new WebpackPwaManifest({
-        name: 'My App',
-        short_name: 'My App',
-        description: 'This is my app',
+        name: 'The Text Editor App',
+        short_name: 'TE App',
+        description: 'Here is the text editor app',
         background_color: '#ffffff',
         crossorigin: 'use-credentials',
         icons: [{
