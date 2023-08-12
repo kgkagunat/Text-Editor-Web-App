@@ -25,15 +25,16 @@ module.exports = () => {
         swSrc: './src-sw.js',
       }),
       new WebpackPwaManifest({
-        name: 'The Text Editor App',
-        short_name: 'TE App',
+        name: 'JATE',
+        short_name: 'JATE',
         description: 'Here is the text editor app',
         background_color: '#ffffff',
         crossorigin: 'use-credentials',
         icons: [{
           src: path.resolve(__dirname,'src/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 512],
-        }]
+        }],
+        filename: 'manifest.webmanifest'
       }),
     ],
 
