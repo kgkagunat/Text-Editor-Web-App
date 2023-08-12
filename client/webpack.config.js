@@ -31,7 +31,7 @@ module.exports = () => {
         background_color: '#ffffff',
         crossorigin: 'use-credentials',
         icons: [{
-          src: path.resolve(__dirname,'src/img/icon.png'),
+          src: path.resolve(__dirname,'src/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 512],
         }]
       }),
